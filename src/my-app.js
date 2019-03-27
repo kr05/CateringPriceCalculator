@@ -22,6 +22,7 @@ import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import { menuIcon } from './my-icons.js';
 import './components/snack-bar.js';
+import './components/menu-bottom-sheet/menu-bottom-sheet';
 
 class MyApp extends LitElement {
   static get properties() {
@@ -39,22 +40,28 @@ class MyApp extends LitElement {
         :host {
           display: block;
 
-          --app-drawer-width: 256px;
+          --app-primary-blue: #002171;
+          --app-transparent-primary-blue: rgba(0,33,113, 0.24);
+          --app-light-transparent-primary-blue: rgba(0,33,113, 0.06);
 
-          --app-primary-color: #E91E63;
-          --app-secondary-color: #293237;
-          --app-dark-text-color: var(--app-secondary-color);
-          --app-light-text-color: white;
-          --app-section-even-color: #f7f7f7;
-          --app-section-odd-color: white;
+          --app-primary-white: #FAFAFA;
+          --app-primary-black: #293237;
 
-          --app-header-background-color: white;
+          --app-primary-color: var(--app-primary-blue);
+          --app-transparent-primary-color: var(--app-transparent-primary-blue);
+          --app-light-transparent-primary-color: var(--app-light-transparent-primary-blue);
+          --app-secondary-color: var(--app-primary-black);
+          --app-dark-text-color: var(--app-primary-black);
+          --app-light-text-color: var(--app-primary-white);
+
+          --app-border-color: rgba(219,219,219,1);
+          --app-subtitle-text-color: rgba(0,0,0,0.6);
+
+          --app-header-background-color: var(--app-light-text-color);
           --app-header-text-color: var(--app-dark-text-color);
           --app-header-selected-color: var(--app-primary-color);
 
-          --app-drawer-background-color: var(--app-secondary-color);
-          --app-drawer-text-color: var(--app-light-text-color);
-          --app-drawer-selected-color: #78909C;
+          --app-card-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
         }
 
         app-header {
@@ -135,7 +142,7 @@ class MyApp extends LitElement {
         }
 
         .main-content {
-          padding-top: 64px;
+          padding-top: 72px;
           min-height: 100vh;
         }
 
@@ -145,6 +152,10 @@ class MyApp extends LitElement {
 
         .page[active] {
           display: block;
+        }
+
+        catering-calculator {
+          margin: 0 8px;
         }
 
         footer {
@@ -165,10 +176,6 @@ class MyApp extends LitElement {
             display: none;
           }
 
-          .main-content {
-            padding-top: 107px;
-          }
-
           /* The drawer button isn't shown in the wide layout, so we don't
           need to offset the title */
           [main-title] {
@@ -186,18 +193,20 @@ class MyApp extends LitElement {
       <app-header condenses reveals effects="waterfall">
         <app-toolbar class="toolbar-top">
           <button class="menu-btn" title="Menu" @click="${this._menuButtonClicked}">${menuIcon}</button>
-          <div main-title>${this.appTitle}</div>
+          <div main-title>Catering Calculator</div>
         </app-toolbar>
       </app-header>
 
       <!-- Main content -->
       <main role="main" class="main-content">
-        <catering-calculator></catering-calculator>
+        <catering-calculator @add-menu-item="${this._addMenuItemEvent}"></catering-calculator>
       </main>
 
       <snack-bar ?active="${this._snackbarOpened}">
         You are now ${this._offline ? 'offline' : 'online'}.
       </snack-bar>
+
+      <menu-bottom-sheet @add-to-cart="${this._addToCart}"></menu-bottom-sheet>
     `;
   }
 
@@ -285,6 +294,17 @@ class MyApp extends LitElement {
 
   _drawerOpenedChanged(e) {
     this._updateDrawerState(e.target.opened);
+  }
+
+  _addMenuItemEvent(e) {
+    console.log('adding menu item...')
+    this.shadowRoot.querySelector('menu-bottom-sheet').open = true
+  }
+
+  _addToCart(e) {
+    console.log('add to cart:', e.detail)
+    this.shadowRoot.querySelector('menu-bottom-sheet').open = false
+    this.shadowRoot.querySelector('catering-calculator').addItem(e.detail)
   }
 }
 
