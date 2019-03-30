@@ -22,6 +22,7 @@ import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import { menuIcon } from './my-icons.js';
 import './components/snack-bar.js';
+import './components/menu-bottom-sheet/menu-bottom-sheet';
 
 class MyApp extends LitElement {
   static get properties() {
@@ -39,22 +40,37 @@ class MyApp extends LitElement {
         :host {
           display: block;
 
-          --app-drawer-width: 256px;
+          --trattoria-blue: #1d242c;
+          --trattoria-light-blue: #2a3d4b;
+          --trattoria-light-blue-transparent: rgba(42, 61, 75, 0.24);
+          --trattoria-light-blue-light-transparent: rgba(42, 61, 75, 0.06);
+          --trattoria-beige: #e1dbcf;
 
-          --app-primary-color: #E91E63;
-          --app-secondary-color: #293237;
-          --app-dark-text-color: var(--app-secondary-color);
-          --app-light-text-color: white;
-          --app-section-even-color: #f7f7f7;
-          --app-section-odd-color: white;
+          --app-primary-blue: #0d47a1;
+          --app-transparent-primary-blue: rgba(0,33,113, 0.24);
+          --app-light-transparent-primary-blue: rgba(0,33,113, 0.06);
+          --app-primary-red: #e94242;
+          --app-transparent-primary-red: rgba(233,66,66, 0.24);
+          --app-light-transparent-primary-red: rgba(233,66,66, 0.06);
+          
+          --app-primary-white: #FAFAFA;
+          --app-primary-black: #293237;
 
-          --app-header-background-color: white;
-          --app-header-text-color: var(--app-dark-text-color);
-          --app-header-selected-color: var(--app-primary-color);
+          --app-primary-color: var(--trattoria-light-blue);
+          --app-transparent-primary-color: var(--trattoria-light-blue-transparent);
+          --app-light-transparent-primary-color: var(--trattoria-light-blue-light-transparent);
+          --app-secondary-color: var(--app-primary-black);
+          --app-dark-text-color: var(--trattoria-blue);
+          --app-light-text-color: var(--app-primary-white);
 
-          --app-drawer-background-color: var(--app-secondary-color);
-          --app-drawer-text-color: var(--app-light-text-color);
-          --app-drawer-selected-color: #78909C;
+          /* --app-border-color: rgba(219,219,219,1); */
+          --app-border-color: #b8997b;
+          --app-subtitle-text-color: rgba(0,0,0,0.6);
+
+          --app-header-background-color: var(--app-primary-color);
+          --app-header-text-color: var(--trattoria-beige);
+          
+          --app-card-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
         }
 
         app-header {
@@ -65,7 +81,7 @@ class MyApp extends LitElement {
           text-align: center;
           background-color: var(--app-header-background-color);
           color: var(--app-header-text-color);
-          border-bottom: 1px solid #eee;
+          box-shadow: var(--app-card-shadow);
         }
 
         .toolbar-top {
@@ -75,58 +91,8 @@ class MyApp extends LitElement {
         [main-title] {
           font-family: 'Pacifico';
           text-transform: lowercase;
-          font-size: 30px;
-          /* In the narrow layout, the toolbar is offset by the width of the
-          drawer button, and the text looks not centered. Add a padding to
-          match that button */
-          padding-right: 44px;
-        }
-
-        .toolbar-list {
-          display: none;
-        }
-
-        .toolbar-list > a {
-          display: inline-block;
-          color: var(--app-header-text-color);
-          text-decoration: none;
-          line-height: 30px;
-          padding: 4px 24px;
-        }
-
-        .toolbar-list > a[selected] {
-          color: var(--app-header-selected-color);
-          border-bottom: 4px solid var(--app-header-selected-color);
-        }
-
-        .menu-btn {
-          background: none;
-          border: none;
-          fill: var(--app-header-text-color);
-          cursor: pointer;
-          height: 44px;
-          width: 44px;
-        }
-
-        .drawer-list {
-          box-sizing: border-box;
-          width: 100%;
-          height: 100%;
-          padding: 24px;
-          background: var(--app-drawer-background-color);
-          position: relative;
-        }
-
-        .drawer-list > a {
-          display: block;
-          text-decoration: none;
-          color: var(--app-drawer-text-color);
-          line-height: 40px;
-          padding: 0 24px;
-        }
-
-        .drawer-list > a[selected] {
-          color: var(--app-drawer-selected-color);
+          font-size: 28px;
+          letter-spacing: 1px;
         }
 
         /* Workaround for IE11 displaying <main> as inline */
@@ -135,8 +101,7 @@ class MyApp extends LitElement {
         }
 
         .main-content {
-          padding-top: 64px;
-          min-height: 100vh;
+          padding-top: 72px;
         }
 
         .page {
@@ -147,28 +112,20 @@ class MyApp extends LitElement {
           display: block;
         }
 
+        catering-calculator {
+          margin: 0 8px;
+        }
+
         footer {
-          padding: 24px;
-          background: var(--app-drawer-background-color);
-          color: var(--app-drawer-text-color);
+          padding: 16px;
+          font-size: 12px;
           text-align: center;
+          color: #b8997b;
         }
 
         /* Wide layout: when the viewport width is bigger than 460px, layout
         changes to a wide layout */
         @media (min-width: 460px) {
-          .toolbar-list {
-            display: block;
-          }
-
-          .menu-btn {
-            display: none;
-          }
-
-          .main-content {
-            padding-top: 107px;
-          }
-
           /* The drawer button isn't shown in the wide layout, so we don't
           need to offset the title */
           [main-title] {
@@ -185,19 +142,20 @@ class MyApp extends LitElement {
       <!-- Header -->
       <app-header condenses reveals effects="waterfall">
         <app-toolbar class="toolbar-top">
-          <button class="menu-btn" title="Menu" @click="${this._menuButtonClicked}">${menuIcon}</button>
-          <div main-title>${this.appTitle}</div>
+          <div main-title>Catering Calculator</div>
         </app-toolbar>
       </app-header>
 
       <!-- Main content -->
       <main role="main" class="main-content">
-        <catering-calculator></catering-calculator>
+        <catering-calculator @finish="${_ => this._sendMessage('Gracias por completar el formulario, nos pondremos en contacto pronto.')}" @add-menu-item="${this._addMenuItemEvent}"></catering-calculator>
       </main>
 
-      <snack-bar ?active="${this._snackbarOpened}">
-        You are now ${this._offline ? 'offline' : 'online'}.
-      </snack-bar>
+      <snack-bar ?active="${this._snackbarOpened}">${this._snackbarMessage}</snack-bar>
+
+      <footer>made with 🌵 by agave media</footer>
+
+      <menu-bottom-sheet @add-to-cart="${this._addToCart}"></menu-bottom-sheet>
     `;
   }
 
@@ -240,10 +198,6 @@ class MyApp extends LitElement {
     if (previousOffline === undefined) {
       return;
     }
-
-    clearTimeout(this.__snackbarTimer);
-    this._snackbarOpened = true;
-    this.__snackbarTimer = setTimeout(() => { this._snackbarOpened = false }, 3000);
   }
 
   _locationChanged(location) {
@@ -273,7 +227,7 @@ class MyApp extends LitElement {
         break;
       default:
         page = 'view404';
-        import('./views/my-view404.js/index.js');
+        import('./views/my-view404.js');
     }
 
     this._page = page;
@@ -285,6 +239,24 @@ class MyApp extends LitElement {
 
   _drawerOpenedChanged(e) {
     this._updateDrawerState(e.target.opened);
+  }
+
+  _addMenuItemEvent(e) {
+    console.log('adding menu item...')
+    this.shadowRoot.querySelector('menu-bottom-sheet').open = true
+  }
+
+  _addToCart(e) {
+    console.log('add to cart:', e.detail)
+    this.shadowRoot.querySelector('menu-bottom-sheet').open = false
+    this.shadowRoot.querySelector('catering-calculator').addItem(e.detail)
+  }
+
+  _sendMessage(msg) {
+    clearTimeout(this.__snackbarTimer);
+    this._snackbarMessage = msg;
+    this._snackbarOpened = true;
+    this.__snackbarTimer = setTimeout(() => { this._snackbarOpened = false }, 3000);
   }
 }
 
