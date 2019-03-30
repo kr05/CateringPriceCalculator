@@ -21,12 +21,16 @@ class AgaveStepper extends LitElement {
                 }
 
                 mwc-button {
-                    border-bottom: 4px solid transparent;
+                    border-bottom: 2px solid transparent;
                     --mdc-theme-primary: var(--app-primary-color);
                 }
 
                 mwc-button[selected] {
                     border-color: var(--app-primary-color);
+                }
+
+                @media (max-width: 768px) {
+
                 }
             `
         ]
@@ -43,10 +47,9 @@ class AgaveStepper extends LitElement {
     render() {
         return html`
             <nav>
-                <mwc-button @click="${_ => this.selectIndex(0)}" ?selected="${this.selected === 0}">Paso 1</mwc-button>
-                <mwc-button @click="${_ => this.selectIndex(1)}" ?selected="${this.selected === 1}">Paso 2</mwc-button>
-                <mwc-button @click="${_ => this.selectIndex(2)}" ?selected="${this.selected === 2}">Paso 3</mwc-button>
-                <mwc-button @click="${_ => this.selectIndex(3)}" ?selected="${this.selected === 3}">Paso 4</mwc-button>
+                <mwc-button dense @click="${_ => this.selectIndex(0)}" ?selected="${this.selected === 0}">1. Info</mwc-button>
+                <mwc-button dense @click="${_ => this.selectIndex(1)}" ?selected="${this.selected === 1}">2. Menu</mwc-button>
+                <mwc-button dense @click="${_ => this.selectIndex(2)}" ?selected="${this.selected === 2}">3. Resumen</mwc-button>
             </nav>
             
             <slot></slot>

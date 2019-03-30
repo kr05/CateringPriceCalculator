@@ -1,11 +1,11 @@
 {
-  "name": "My App",
-  "short_name": "My App",
-  "description": "My App description",
+  "name": "Catering Calculator",
+  "short_name": "Catering",
+  "description": "Herramienta para cotizar tus eventos.",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#3f51b5",
-  "background_color": "#3f51b5",
+  "theme_color": "#2a3d4b",
+  "background_color": "#2a3d4b",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",

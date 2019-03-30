@@ -60,7 +60,7 @@ class VenueSelector extends LitElement {
         return html`
             ${repeat(this.entries, (singleVariant, index) => html`
                 <div 
-                    @click="${_ => this._select(index, singleVariant)}" 
+                    @click="${_ => this._select(index)}" 
                     ?selected="${index === this.selected}" 
                     class="single-option">
                         <span class="option-name">${singleVariant.name}</span> 
@@ -72,13 +72,28 @@ class VenueSelector extends LitElement {
 
     constructor() {
         super()
-        this.entries = []
         this.selected = 0
+
+        this.entries = [
+            {
+                name: "Trattoria Centro"
+            },
+            {
+                name: "Terraza Marfil"
+            }
+        ]
     }
 
-    _select(idx, entry) {
+    updated(changedProps) {
+        const selectedChange = changedProps.has('selected')
+
+        if (selectedChange) {
+            this.dispatchEvent(new CustomEvent('selected-change', {detail: {selected: this.selected, entry: this.entries[this.selected]}, bubbles: true, composed: true}))
+        }
+    }
+
+    _select(idx) {
         this.selected = idx
-        this.dispatchEvent(new CustomEvent('selected-change', {detail: {selected: idx, entry: entry}, bubbles: true, composed: true}))
     }
 }
 
