@@ -120,7 +120,7 @@ class CartStep extends LitElement {
                 name: "Tartar de atun",
                 subtitle: "con aguacate y salpicon de mango",
                 id: 1,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/tartar-atun-salmon-655x368%20(1).jpg?alt=media&token=4d413a01-71be-4f6b-91f8-c65360209701",
                 category: "entree",
                 labels: ['entree', 'seafood', 'valentines']
             },
@@ -128,28 +128,28 @@ class CartStep extends LitElement {
                 name: "Ensalada de pera",
                 subtitle: "riquisima combinacion de lechugas mixtas con tropiezos de nuez, cebolla morada, jitomate, zanahoria, aderezo de miel, y mostaza y lluvia de queso roquefort",
                 id: 2,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/ensalada-pera-y-gorgonzola%20(1).jpg?alt=media&token=6334ffc6-c423-459b-adec-600e6d72eacd",
                 category: "entree",
                 labels: ['entree', 'salad', 'valentines']
             },
             {
                 name: "Salmon",
                 id: 3,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/20160826-sous-vide-salmon-46-1500x1125%20(1).jpg?alt=media&token=3d246a17-f5a6-4646-8795-356bd5537bb6",
                 category: "main course",
                 labels: ['main course', 'seafood', 'valentines']
             },
             {
                 name: "Medallones de filete al gusto",
                 id: 4,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/th5-640x426-23567%20(1).jpg?alt=media&token=eda6c04f-2f52-4e05-91b0-15b201119b9b",
                 category: "main course",
                 labels: ['main course', 'beef', 'valentines'], 
             },
             {
                 name: "Mousse de frambuesa",
                 id: 5,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/mousse-de-frambuesa-u-otros-master%20(1).jpg?alt=media&token=a05bc9dd-1054-4047-be46-dc5e4aef1f9a",
                 category: "dessert",
                 labels: ['dessert', 'valentines']
             },
@@ -158,7 +158,7 @@ class CartStep extends LitElement {
                 name: "Crema de pistache",
                 subtitle: "con perlas de pera y croton artesanal de mantequilla",
                 id: 6,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/crema-de-pistache%20(1).jpg?alt=media&token=9003e493-eb85-4b79-9d00-d7ddb9514204",
                 category: "entree",
                 labels: ['entree', 'christmas']
             },
@@ -166,7 +166,7 @@ class CartStep extends LitElement {
                 name: "Crema de jitomate",
                 subtitle: "con piñones rostizados, queso provologne ahumado, pesto de albabaca y tomate cherry relleno de queso de cabra",
                 id: 7,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/Italian-Cream-Tomato-Soup-1-2014-12%20(1).jpg?alt=media&token=ffe78cde-efd7-4090-bc2c-08a5d3ffa5c1",
                 category: "entree",
                 labels: ['entree', 'christmas']
             },
@@ -174,7 +174,7 @@ class CartStep extends LitElement {
                 name: "Salmon relleno al horno",
                 subtitle: "salmon horneado y relleno de queso crema y cabra con jamon serrano y salsa de vino blanco y eneldo, con suprema de papa y verduras salteadas a la mantequilla",
                 id: 8,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/salmon_relleno_nueces%20(1).jpg?alt=media&token=440b7106-6d47-4d58-9e37-9dafa97b8884",
                 category: "main course",
                 labels: ['main course', 'christmas', 'seafood']
             },
@@ -182,7 +182,7 @@ class CartStep extends LitElement {
                 name: "Filete a la leña",
                 subtitle: "con salsa de aceitunas verdes, suprema de papa y verduras salteadas a la mantequilla",
                 id: 9,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/filete-de-pescado-del%20(1).jpg?alt=media&token=07be6777-7ea7-4625-bf4f-f97eb3cf08a9",
                 category: "main course",
                 labels: ['main course', 'christmas']
             },
@@ -190,7 +190,7 @@ class CartStep extends LitElement {
                 name: "Tiramisu de frutos rojos",
                 subtitle: "soletas importadas y cafe expreso",
                 id: 10,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/receta-tiramisu-frutas630%20(1).jpg?alt=media&token=c6ec466f-2ffc-41cd-8a75-2fd4c30a370c",
                 category: "dessert",
                 labels: ['dessert', 'christmas']
             },
@@ -198,9 +198,33 @@ class CartStep extends LitElement {
                 name: "Pastel de queso",
                 subtitle: "con calabaza de castilla y ate de membrillo al horno",
                 id: 11,
-                image: "https://firebasestorage.googleapis.com/v0/b/zipcater.appspot.com/o/menuPictures%2FHnraUz1YbIMN4lOJrfz4%2Fo%20(1).jpg?alt=media&token=ec4cf54c-560a-4015-ab41-fd7519f65300",
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/ef432d96-5c35-4013-a247-64eef7377223%20(1).jpg?alt=media&token=dd3a8f5b-a96e-4b6a-8024-915369565173",
                 category: "dessert",
                 labels: ['dessert', 'christmas']
+            },
+            {
+                name: "Ceasar salad",
+                subtitle: "",
+                id: 12,
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/ensalada-pera-y-gorgonzola%20(1).jpg?alt=media&token=6334ffc6-c423-459b-adec-600e6d72eacd",
+                category: "salad",
+                labels: ['salad']
+            },
+            {
+                name: "Mozzarela sticks",
+                subtitle: "",
+                id: 13,
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/mozzarella-sticks%20(1).jpg?alt=media&token=2c4e8acc-35a1-4c41-9fbb-35a79b34f234",
+                category: "appetizer",
+                labels: ['appetizer']
+            },
+            {
+                name: "Hummus",
+                subtitle: "",
+                id: 14,
+                image: "https://firebasestorage.googleapis.com/v0/b/catering-calculator.appspot.com/o/hummus-31%20(1).jpg?alt=media&token=a61174e6-fd8a-426d-a85e-8d4b538be354",
+                category: "appetizer",
+                labels: ['appetizer']
             },
         ]
     }

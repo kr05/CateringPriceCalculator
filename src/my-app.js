@@ -120,7 +120,15 @@ class MyApp extends LitElement {
           padding: 16px;
           font-size: 12px;
           text-align: center;
+        }
+        
+        footer a {
+          text-decoration: none;
           color: #b8997b;
+        }
+
+        footer a:hover {
+          color: var(--app-primary-color);
         }
 
         /* Wide layout: when the viewport width is bigger than 460px, layout
@@ -153,7 +161,7 @@ class MyApp extends LitElement {
 
       <snack-bar ?active="${this._snackbarOpened}">${this._snackbarMessage}</snack-bar>
 
-      <footer>made with 🌵 by agave media</footer>
+      <footer><a target="_blank" href="https://agavemedia.io">made with 🌵 by agave media</a></footer>
 
       <menu-bottom-sheet @add-to-cart="${this._addToCart}"></menu-bottom-sheet>
     `;
